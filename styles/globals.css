@@ -6,16 +6,30 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
-
+*/
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Space Mono', monospace;
+}
+
+.ScrollSnapper {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.ScrollSnapper > * {
+  width: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 }
